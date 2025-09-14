@@ -60,7 +60,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
                 <Mail className="h-4 w-4 text-emerald-400" />
-                <span className="text-sm">info@jharkhandexplorer.com</span>
+                <span className="text-sm">info@jharkhandभ्रमण.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Phone className="h-4 w-4 text-emerald-400" />
@@ -169,7 +169,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>© 2025 Jharkhand Explorer. Made with</span>
+              <span>© 2025 Jharkhand भ्रमण . Made with</span>
               <Heart className="h-4 w-4 text-red-500 fill-current" />
               <span>by NadeX Official.</span>
             </div>

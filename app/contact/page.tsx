@@ -58,7 +58,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@jharkhandexplorer.com", "support@jharkhandexplorer.com", "Response within 24 hours"],
+      details: ["info@jharkhandभ्रमण.com", "support@jharkhandभ्रमण.com", "Response within 24 hours"],
     },
     {
       icon: Clock,
