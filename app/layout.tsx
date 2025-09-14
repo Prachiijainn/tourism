@@ -16,9 +16,11 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Jharkhand Explorer - Discover the Land of Forests",
+  title: "Jharkhand भ्रमण - Discover the Land of Forests",
   description: "Explore Jharkhand's waterfalls, wildlife, temples, and tribal culture with AI-powered trip planning",
-  generator: "v0.app",
+  icons: {
+    icon: "/logo.png",
+  },
 }
 
 export default function RootLayout({

@@ -83,7 +83,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Jharkhand Explorer was born from a deep love for the "Land of Forests" and a desire to share its hidden
+                Jharkhand भ्रमण was born from a deep love for the "Land of Forests" and a desire to share its hidden
                 treasures with the world. We believe that travel should be transformative, sustainable, and respectful
                 of local communities and environments.
               </p>
