@@ -4,12 +4,12 @@ import { Mountain, MapPin, Camera } from "lucide-react"
 import Link from "next/link"
 
 const heritagePlaces = [
-	{ image: "/hundru-falls-jharkhand-waterfall-scenic.jpg" },
-	{ image: "/betla-national-park-jharkhand-wildlife-forest.jpg" },
-	{ image: "/baidyanath-temple-deoghar-jharkhand-pilgrimage.jpg" },
-	{ image: "/netarhat-hills-sunrise-jharkhand-landscape.jpg" },
-	{ image: "/dassam-falls-jharkhand-forest-waterfall.jpg" },
-	{ image: "/parasnath-hill-jain-temples-jharkhand-peak.jpg" },
+	{ image: "/hundru-falls-jharkhand-waterfall-scenic.jpg", name: "Hundru Falls" },
+	{ image: "/betla-national-park-jharkhand-wildlife-forest.jpg", name: "Betla National Park" },
+	{ image: "/baidyanath-temple-deoghar-jharkhand-pilgrimage.jpg", name: "Baidyanath Temple" },
+	{ image: "/netarhat-hills-sunrise-jharkhand-landscape.jpg", name: "Netarhat Hills" },
+	{ image: "/dassam-falls-jharkhand-forest-waterfall.jpg", name: "Dassam Falls" },
+	{ image: "/parasnath-hill-jain-temples-jharkhand-peak.jpg", name: "Parasnath Hill" },
 ]
 
 export function HeritageSection() {
@@ -35,13 +35,16 @@ export function HeritageSection() {
 					{heritagePlaces.map((place, idx) => (
 						<div
 							key={idx}
-							className="relative h-48 overflow-hidden rounded-xl shadow-lg group"
+							className="relative h-48 overflow-hidden rounded-xl shadow-lg group flex flex-col"
 						>
 							<img
 								src={place.image}
-								alt={`Heritage place ${idx + 1}`}
+								alt={place.name}
 								className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 							/>
+							<div className="bg-white/80 text-gray-900 text-center py-2 font-semibold text-lg rounded-b-xl absolute bottom-0 w-full">
+								{place.name}
+							</div>
 						</div>
 					))}
 				</div>
@@ -54,17 +57,14 @@ export function HeritageSection() {
 				/>
 			</div>
 			<div className="text-center mt-12">
-					<Link href="/destinations">
-						<div className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors group cursor-pointer">
-							<Camera className="h-5 w-5 group-hover:scale-110 transition-transform" />
-							Explore All Destinations
-							<MapPin className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-						</div>
-					</Link>
-				</div>
-
-			{/* Fullwidth Image */}
-			
+				<Link href="/destinations">
+					<div className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors group cursor-pointer">
+						<Camera className="h-5 w-5 group-hover:scale-110 transition-transform" />
+						Explore All Destinations
+						<MapPin className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+					</div>
+				</Link>
+			</div>
 		</section>
 	)
 }

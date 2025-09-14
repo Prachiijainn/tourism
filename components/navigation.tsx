@@ -1,9 +1,10 @@
 "use client"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Mountain, MapPin, Calendar, Phone, Info, UserRound } from "lucide-react"
+import { Menu, X, Mountain, MapPin, Calendar, Phone, Info, UserRound, TramFront } from "lucide-react"
 import { supabase } from "@/lib/supabaseClient"
 import { useEffect, useState } from "react"
+import AuthForm from "./AuthForm"
 
 interface NavigationProps {
   onLoginClick?: () => void
@@ -12,11 +13,13 @@ interface NavigationProps {
 export function Navigation({ onLoginClick }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [user, setUser] = useState<any>(null)
+  const [showAuth, setShowAuth] = useState(false) // <-- ADDED: control popup
 
   const navItems = [
     { href: "/", label: "Home", icon: Mountain },
     { href: "/destinations", label: "Destinations", icon: MapPin },
     { href: "/planner", label: "Trip Planner", icon: Calendar },
+    { href: "/trains", label: "Trains", icon: TramFront },
     { href: "/about", label: "About", icon: Info },
     { href: "/contact", label: "Contact", icon: Phone },
   ]
@@ -40,13 +43,15 @@ export function Navigation({ onLoginClick }: NavigationProps) {
   }
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-emerald-100 z-40">
+    <nav className="fixed top-0 w-full bg-white backdrop-blur-sm border-b border-emerald-100 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl text-emerald-700">
-            <Mountain className="h-8 w-8" />
-            <span className="hidden sm:block">Jharkhand Explorer</span>
+            <div style={{ maxWidth: "110px" }}>
+              <img src="/logo.png" alt="Elephant" style={{ width: "100%", height: "auto" }} />
+            </div>
+            <span className="hidden sm:block font-bold text-xl"> Jharkhand</span ><span className="hidden sm:block font-bold text-xl text-yellow-500"> भ्रमण </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -103,7 +108,10 @@ export function Navigation({ onLoginClick }: NavigationProps) {
               ))}
               {user ? (
                 <button
-                  onClick={() => { handleLogout(); setIsOpen(false); }}
+                  onClick={() => {
+                    handleLogout()
+                    setIsOpen(false)
+                  }}
                   className="flex items-center bg-transparent hover:bg-gray-100 p-2 rounded"
                   title="Logout"
                 >
@@ -111,13 +119,18 @@ export function Navigation({ onLoginClick }: NavigationProps) {
                 </button>
               ) : (
                 <button
-                  onClick={() => { onLoginClick?.(); setIsOpen(false); }}
+                  onClick={() => {
+                    onLoginClick?.()
+                    setIsOpen(false)
+                  }}
                   className="flex items-center bg-transparent hover:bg-gray-100 p-2 rounded"
                   title="Login"
                 >
                   <UserRound className="h-6 w-6 text-gray-700" />
                 </button>
               )}
+              {/* Render AuthForm only when explicitly shown */}
+              {showAuth && <AuthForm onSuccess={() => setShowAuth(false)} />}
             </div>
           </div>
         )}
@@ -125,5 +138,3 @@ export function Navigation({ onLoginClick }: NavigationProps) {
     </nav>
   )
 }
-
-

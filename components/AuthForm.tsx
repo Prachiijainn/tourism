@@ -2,29 +2,33 @@
 import { useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 import { Mail, Lock } from "lucide-react"
+import { useRouter } from "next/navigation"
 
-export default function AuthForm() {
+interface AuthFormProps {
+  onSuccess?: () => void
+}
+
+export default function AuthForm({ onSuccess }: AuthFormProps) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const router = useRouter()
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true)
     setError(null)
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
 
     if (error) {
       setError(error.message)
     } else {
-      alert("Login successful ✅")
       setEmail("")
       setPassword("")
+      onSuccess?.() 
+      router.replace("/") // 👈 Redirect to homepage
     }
 
     setLoading(false)
@@ -35,15 +39,13 @@ export default function AuthForm() {
     setLoading(true)
     setError(null)
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    })
+    const { error } = await supabase.auth.signUp({ email, password })
 
     if (error) {
       setError(error.message)
     } else {
-      alert("Signup successful 🎉 Check your email for confirmation.")
+      onSuccess?.() 
+      router.replace("/") // 👈 Redirect after signup
     }
 
     setLoading(false)

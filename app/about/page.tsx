@@ -109,9 +109,9 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <img
-                src="/jharkhand-landscape-mission-about.jpg"
+                src="/map1.png"
                 alt="Jharkhand landscape"
-                className="rounded-2xl shadow-lg w-full h-96 object-cover"
+                className="rounded-3x1 w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
             </div>
