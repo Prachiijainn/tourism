@@ -48,10 +48,10 @@ export function Navigation({ onLoginClick }: NavigationProps) {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl text-emerald-700">
-            <div style={{ maxWidth: "110px" }}>
-              <img src="/logo.png" alt="Elephant" style={{ width: "100%", height: "auto" }} />
-            </div>
-            <span className="hidden sm:block font-bold text-xl"> Jharkhand</span ><span className="hidden sm:block font-bold text-xl text-yellow-500"> भ्रमण </span>
+  <div className="w-18 sm:w-20 md:w-20 lg:w-25">
+    <img src="/logo.png" alt="Elephant" className="w-full h-auto" />
+  </div>
+            <span className="sm:block font-bold text-xl"> Jharkhand</span ><span className="m:block font-bold text-xl text-yellow-500"> भ्रमण </span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -6,7 +6,7 @@ export default function Loading() {
 
   useEffect(() => {
     // Force loader to stay for at least 2 seconds
-    const timer = setTimeout(() => setShow(false), 2000)
+    const timer = setTimeout(() => setShow(false), 5000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -17,7 +17,7 @@ export default function Loading() {
       <img 
         src="/logo.png" 
         alt="Loading Jharkhand..." 
-        className="w-40 h-40 animate-pulse" 
+        className="w-60 h-50 " 
       />
     </div>
   )
