@@ -1,12 +1,17 @@
 "use client"
-
-import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Mountain, MapPin, Calendar, Phone, Info } from "lucide-react"
+import { Menu, X, Mountain, MapPin, Calendar, Phone, Info, UserRound } from "lucide-react"
+import { supabase } from "@/lib/supabaseClient"
+import { useEffect, useState } from "react"
 
-export function Navigation() {
+interface NavigationProps {
+  onLoginClick?: () => void
+}
+
+export function Navigation({ onLoginClick }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const [user, setUser] = useState<any>(null)
 
   const navItems = [
     { href: "/", label: "Home", icon: Mountain },
@@ -15,6 +20,24 @@ export function Navigation() {
     { href: "/about", label: "About", icon: Info },
     { href: "/contact", label: "Contact", icon: Phone },
   ]
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user)
+    })
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+
+    return () => {
+      listener.subscription.unsubscribe()
+    }
+  }, [])
+
+  async function handleLogout() {
+    await supabase.auth.signOut()
+  }
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-emerald-100 z-40">
@@ -38,6 +61,23 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="ml-4 flex items-center bg-transparent hover:bg-gray-100 p-2 rounded"
+                title="Logout"
+              >
+                <UserRound className="h-6 w-6 text-red-600" />
+              </button>
+            ) : (
+              <button
+                onClick={onLoginClick}
+                className="ml-4 flex items-center bg-transparent hover:bg-gray-100 p-2 rounded"
+                title="Login"
+              >
+                <UserRound className="h-6 w-6 text-gray-700" />
+              </button>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -61,6 +101,23 @@ export function Navigation() {
                   {item.label}
                 </Link>
               ))}
+              {user ? (
+                <button
+                  onClick={() => { handleLogout(); setIsOpen(false); }}
+                  className="flex items-center bg-transparent hover:bg-gray-100 p-2 rounded"
+                  title="Logout"
+                >
+                  <UserRound className="h-6 w-6 text-red-600" />
+                </button>
+              ) : (
+                <button
+                  onClick={() => { onLoginClick?.(); setIsOpen(false); }}
+                  className="flex items-center bg-transparent hover:bg-gray-100 p-2 rounded"
+                  title="Login"
+                >
+                  <UserRound className="h-6 w-6 text-gray-700" />
+                </button>
+              )}
             </div>
           </div>
         )}
@@ -68,3 +125,5 @@ export function Navigation() {
     </nav>
   )
 }
+
+

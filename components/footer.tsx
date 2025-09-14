@@ -169,7 +169,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>© 2024 Jharkhand Explorer. Made with</span>
+              <span>© 2025 Jharkhand Explorer. Made with</span>
               <Heart className="h-4 w-4 text-red-500 fill-current" />
               <span>in Jharkhand, India.</span>
             </div>
