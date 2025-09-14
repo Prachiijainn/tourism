@@ -7,21 +7,26 @@ import { Mountain, Users, Sparkles, Heart, Award, Globe, TreePine, Camera } from
 export default function AboutPage() {
   const teamMembers = [
     {
-      name: "Priya Sharma",
-      role: "Founder & Travel Expert",
-      description:
-        "Born in Ranchi, Priya has explored every corner of Jharkhand and is passionate about sustainable tourism.",
+      name: "Prabhat Ranjan Pathak",
+      role: "Founder & Developer",
+      description:"Born in Bihar, Prabhat has explored every corner of Jharkhand and is passionate about sustainable tourism.",
       image: "/team-priya-jharkhand-travel-expert.jpg",
     },
     {
-      name: "Rajesh Kumar",
-      role: "Local Guide Coordinator",
-      description: "Connects travelers with authentic local experiences and manages our network of certified guides.",
+      name: "Prachi Jain",
+      role: "Co-founder & Developer",
+      description: "Born in Haryana, Prachi brings deep local knowledge and a love for the state's natural beauty.",
       image: "/team-rajesh-local-guide-coordinator.jpg",
     },
     {
-      name: "Anita Devi",
-      role: "Cultural Heritage Specialist",
+      name: "Gauri Dhiman",
+      role: "Tourism Expert",
+      description: "Expert in tribal culture and traditions, ensuring respectful and educational cultural exchanges.",
+      image: "/team-anita-cultural-heritage-specialist.jpg",
+    },
+    {
+    name: "Himanshu Singh",
+      role: "Advisor & Researcher",
       description: "Expert in tribal culture and traditions, ensuring respectful and educational cultural exchanges.",
       image: "/team-anita-cultural-heritage-specialist.jpg",
     },

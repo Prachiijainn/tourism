@@ -74,7 +74,7 @@ export function TripPlannerForm({ onSubmit, isLoading }: TripPlannerFormProps) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-2xl">
           <Sparkles className="h-6 w-6 text-emerald-600" />
-          AI Trip Planner
+          Trip Planner
         </CardTitle>
         <p className="text-gray-600">
           Tell us your preferences and our AI will create a personalized itinerary for your Jharkhand adventure
