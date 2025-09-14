@@ -15,7 +15,7 @@ export default function Loading() {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-transparent z-50">
       <img 
-        src="/jharkhand.svg.png" 
+        src="/logo.png" 
         alt="Loading Jharkhand..." 
         className="w-40 h-40 animate-pulse" 
       />
