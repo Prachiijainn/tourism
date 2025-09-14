@@ -24,11 +24,11 @@ export default function HomePage() {
 
       {/* Modal for AuthForm */}
       {showAuth && (
-        <div className="fixed inset-0 bg-transparent flex items-center justify-center z-50">
-          <div className="bg-transparent rounded-lg shadow-lg p-6 relative ">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white/10 rounded-3xl shadow-2xl p-0 sm:p-8 relative max-w-lg w-full mx-4">
             <button
               onClick={() => setShowAuth(false)}
-              className="absolute top-2 right-2 text-red-500 text-2xl"
+              className="absolute top-4 right-6 text-red-500 text-3xl font-bold z-10"
               aria-label="Close"
             >
               ×

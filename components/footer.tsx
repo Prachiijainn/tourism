@@ -149,11 +149,11 @@ export function Footer() {
             <p className="text-gray-300 mb-4 text-sm">
               Get the latest travel tips, destination updates, and exclusive offers delivered to your inbox.
             </p>
-            <div className="flex gap-2">
+            <div className="flex gap-1">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="flex-1 w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               />
               <button className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors">
                 Subscribe
@@ -171,7 +171,7 @@ export function Footer() {
             <div className="flex items-center gap-2 text-gray-400 text-sm">
               <span>© 2025 Jharkhand Explorer. Made with</span>
               <Heart className="h-4 w-4 text-red-500 fill-current" />
-              <span>in Jharkhand, India.</span>
+              <span>by NadeX Official.</span>
             </div>
 
             {/* Social Links */}
