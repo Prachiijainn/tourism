@@ -69,7 +69,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="bg-emerald-600 text-white py-20 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">About Jharkhand Explorer</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">About Jharkhand भ्रमण </h1>
           <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto text-pretty">
             Your trusted companion for discovering the natural wonders and cultural treasures of Jharkhand
           </p>

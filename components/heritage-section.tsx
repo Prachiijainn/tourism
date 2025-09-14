@@ -19,7 +19,7 @@ export function HeritageSection() {
 				{/* Header */}
 				<div className="text-center mb-16">
 					<div className="flex items-center justify-center gap-2 mb-4">
-						<Mountain className="h-8 w-8 text-emerald-600" />
+						
 						<h2 className="text-4xl font-bold text-gray-900 text-balance">
 							Famous Places & Heritage Sites
 						</h2>

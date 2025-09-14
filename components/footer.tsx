@@ -48,8 +48,8 @@ export function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <Mountain className="h-8 w-8 text-emerald-400" />
-              <span className="font-bold text-xl">Jharkhand Explorer</span>
+              
+              <span className="font-bold text-xl">Jharkhand भ्रमण </span>
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Discover the heart of Jharkhand through our curated travel experiences, 

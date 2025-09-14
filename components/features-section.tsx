@@ -24,8 +24,8 @@ export function FeaturesSection() {
               Explore JHARKHAND
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-          Jharkhand is a land of stunning waterfalls, lush forests, rich 
-              mineral resources, and vibrant tribal culture. With Jharkhand Explorer, 
+              Jharkhand is a land of stunning waterfalls, lush forests, rich 
+              mineral resources, and vibrant tribal culture. With Jharkhand भ्रमण , 
               we make your journey seamless by offering curated experiences 
               that connect you to the state’s natural beauty and cultural heritage.
             </p>
